@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de Classes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .box {
+            flex: 1;
+            height: 100%;
+        }
+        .red {
+            background-color: red;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .cyan {
+            background-color: cyan;
+        }
+        .sky {
+            background-color: skyblue;
+        }
+        .blue {
+            background-color: blue;
+        }
+        #buttonContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #changeColors {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1" class="box red"></div>
+        <div id="box2" class="box orange"></div>
+        <div id="box3" class="box yellow"></div>
+    </div>
+    <div id="buttonContainer">
+        <button id="changeColors">Trocar Cores</button>
+    </div>
+
+    <script>
+        function changeColors() {
+            document.getElementById('box1').classList.add('cyan');
+
+            document.getElementById('box2').classList.remove('skyblue');
+
+            document.getElementById('box3').classList.toggle('blue');
+        }
+
+        document.getElementById('changeColors').addEventListener('click', changeColors);
+    </script>
+</body>
+</html>
